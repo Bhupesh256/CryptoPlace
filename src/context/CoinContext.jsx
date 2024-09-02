@@ -5,7 +5,7 @@ export const CoinContext = createContext();
 const CoinContextProvider = (props)=>{
 
     const [allCoin, setAllCoin] = useState([]);
-    const [currency, setCurrency] = useState({
+    const [currency, {setCurrency}] = useState({
         name: "usd",
         Symbol: "$"
     })
@@ -32,7 +32,7 @@ const CoinContextProvider = (props)=>{
     }
 
     return(
-        <CoinContext.Provider>
+        <CoinContext.Provider value={contextValue}>
             {props.children}
         </CoinContext.Provider>
     )
